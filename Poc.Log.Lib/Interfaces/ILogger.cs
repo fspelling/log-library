@@ -1,10 +1,9 @@
-﻿using Poc.Log.Lib.Enums;
-using System.Collections.Generic;
+﻿using Poc.Log.Lib.Arguments;
 
 namespace Poc.Log.Lib.Interfaces
 {
     interface ILogger
     {
-        void Gravar(LogType logType, string message, Dictionary<string, object> objects);
+        void Gravar(LoggerArgs loggerArgs);
     }
 }
