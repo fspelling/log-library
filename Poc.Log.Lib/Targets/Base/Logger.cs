@@ -10,7 +10,7 @@ namespace Poc.Log.Lib.Targets.Base
 
         public Logger() => _log = LogManager.GetLogger();
 
-        protected NLog.LogEventInfo GerarLogEventInfo(LoggerArgs loggerArgs)
+        protected NLog.LogEventInfo GerarLogEventInfo(in LoggerArgs loggerArgs)
         {
             var logEventInfo = CarregarLevelLog(loggerArgs.LogType, loggerArgs.Message);
 
@@ -38,7 +38,7 @@ namespace Poc.Log.Lib.Targets.Base
 
         #region Metodos_Auxiliares
 
-        private NLog.LogEventInfo CarregarLevelLog(LogType logType, string message)
+        private NLog.LogEventInfo CarregarLevelLog(in LogType logType, in string message)
         {
             NLog.LogEventInfo logEventInfo;
 

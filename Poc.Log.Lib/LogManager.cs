@@ -2,7 +2,7 @@
 
 namespace Poc.Log.Lib
 {
-    public static class LogManager
+    internal static class LogManager
     {
         private static NLog.Logger _logger;
 

@@ -2,7 +2,7 @@
 
 namespace Poc.Log.Lib.Interfaces
 {
-    interface ILogger
+    public interface ILogger
     {
         void Gravar(LoggerArgs loggerArgs);
     }
