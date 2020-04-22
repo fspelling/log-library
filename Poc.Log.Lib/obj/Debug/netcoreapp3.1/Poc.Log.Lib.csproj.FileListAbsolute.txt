@@ -15,3 +15,4 @@ C:\Projetos\log-library\Poc.Log.Lib\obj\Debug\netcoreapp3.1\Poc.Log.Lib.Assembly
 C:\Projetos\log-library\Poc.Log.Lib\obj\Debug\netcoreapp3.1\Poc.Log.Lib.AssemblyInfo.cs
 C:\Projetos\log-library\Poc.Log.Lib\obj\Debug\netcoreapp3.1\Poc.Log.Lib.dll
 C:\Projetos\log-library\Poc.Log.Lib\obj\Debug\netcoreapp3.1\Poc.Log.Lib.pdb
+C:\Projetos\log-library\Poc.Log.Lib\obj\Debug\netcoreapp3.1\Poc.Log.Lib.csprojAssemblyReference.cache
