@@ -8,6 +8,11 @@ namespace Poc.Log.Lib.Targets
     public class LoggerSqlServer : Base.Logger, Interfaces.ILogger
     {
         /// <summary>
+        /// Inicializa a intancia da classe Poc.Log.Lib.Targets.LoggerSqlServer
+        /// </summary>
+        public LoggerSqlServer() { }
+
+        /// <summary>
         /// Grava as informacoes no log
         /// </summary>
         /// <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
