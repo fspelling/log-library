@@ -28,7 +28,8 @@ namespace Poc.Log.Lib.Targets.Base
         {
             var logEventInfo = CarregarLevelLog(loggerArgs.LogType, loggerArgs.Message);
 
-            logEventInfo.Exception = loggerArgs.exception;
+            logEventInfo.Properties["Source"] = loggerArgs.Source;
+            logEventInfo.Exception = loggerArgs.Exception;
 
             logEventInfo.Properties["DateStart"] = loggerArgs.DateStart.HasValue ? 
                 loggerArgs.DateStart.Value.ToString("yyyy-MM-dd HH:mm:ss.fff") :
@@ -38,12 +39,15 @@ namespace Poc.Log.Lib.Targets.Base
                 loggerArgs.DateFinish.Value.ToString("yyyy-MM-dd HH:mm:ss.fff") :
                 null;
 
-            foreach (var item in loggerArgs.objects)
+            if (loggerArgs.Objects != null)
             {
-                var value = (item.Value is DateTime valueDateTime) ? valueDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") : 
-                    item.Value.ToString();
+                foreach (var item in loggerArgs.Objects)
+                {
+                    var value = (item.Value is DateTime valueDateTime) ? valueDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") :
+                        item.Value.ToString();
 
-                logEventInfo.Properties[item.Key] = value;
+                    logEventInfo.Properties[item.Key] = value;
+                }
             }
 
             return logEventInfo;

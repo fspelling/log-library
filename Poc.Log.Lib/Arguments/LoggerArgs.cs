@@ -32,12 +32,17 @@ namespace Poc.Log.Lib.Arguments
         /// <summary>
         /// Excessao gerado para o log
         /// </summary>
-        public Exception exception { get; }
+        public Exception Exception { get; }
+
+        /// <summary>
+        /// Nome do namespace do sistema que esta chamando o log
+        /// </summary>
+        public string Source { get; }
 
         /// <summary>
         /// Lista dos objetos especificos para cada sistema que esteja consumindo
         /// </summary>
-        public Dictionary<string, object> objects { get; }
+        public Dictionary<string, object> Objects { get; }
 
         /// <summary>
         /// Inicializa a intancia da classe Poc.Log.Lib.Arguments.LoggerArgs
@@ -47,14 +52,17 @@ namespace Poc.Log.Lib.Arguments
         /// <param name="dateStart">Data que iniciou o processamento</param>
         /// <param name="dateFinish">Data que finalizou o processamento</param>
         /// <param name="exception">Excessao gerado para o log</param>
+        /// <param name="source">Nome do namespace do sistema que esta chamando o log</param>
         /// <param name="objects">Lista dos objetos especificos para cada sistema que esteja consumindo</param>
-        public LoggerArgs(LogType logType, string message, DateTime? dateStart, DateTime? dateFinish, Exception exception = null, Dictionary<string, object> objects = null)
+        public LoggerArgs(LogType logType, string message, DateTime? dateStart, DateTime? dateFinish, Exception exception = null, string source = "", Dictionary<string, object> objects = null)
         {
             LogType = logType;
             Message = message;
             DateStart = dateStart;
             DateFinish = dateFinish;
-            this.objects = objects;
+            Objects = objects;
+            Exception = exception;
+            Source = source;
         }
     }
 }

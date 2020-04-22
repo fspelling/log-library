@@ -29,17 +29,22 @@
             Data que finalizou o processamento
             </summary>
         </member>
-        <member name="P:Poc.Log.Lib.Arguments.LoggerArgs.exception">
+        <member name="P:Poc.Log.Lib.Arguments.LoggerArgs.Exception">
             <summary>
             Excessao gerado para o log
             </summary>
         </member>
-        <member name="P:Poc.Log.Lib.Arguments.LoggerArgs.objects">
+        <member name="P:Poc.Log.Lib.Arguments.LoggerArgs.Source">
+            <summary>
+            Nome do namespace do sistema que esta chamando o log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Arguments.LoggerArgs.Objects">
             <summary>
             Lista dos objetos especificos para cada sistema que esteja consumindo
             </summary>
         </member>
-        <member name="M:Poc.Log.Lib.Arguments.LoggerArgs.#ctor(Poc.Log.Lib.Enums.LogType,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Exception,System.Collections.Generic.Dictionary{System.String,System.Object})">
+        <member name="M:Poc.Log.Lib.Arguments.LoggerArgs.#ctor(Poc.Log.Lib.Enums.LogType,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Exception,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
             <summary>
             Inicializa a intancia da classe Poc.Log.Lib.Arguments.LoggerArgs
             </summary>
@@ -48,6 +53,7 @@
             <param name="dateStart">Data que iniciou o processamento</param>
             <param name="dateFinish">Data que finalizou o processamento</param>
             <param name="exception">Excessao gerado para o log</param>
+            <param name="source">Nome do namespace do sistema que esta chamando o log</param>
             <param name="objects">Lista dos objetos especificos para cada sistema que esteja consumindo</param>
         </member>
         <member name="T:Poc.Log.Lib.Enums.LogType">
