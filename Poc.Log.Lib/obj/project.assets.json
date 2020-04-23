@@ -6614,10 +6614,10 @@
     "C:\\Users\\ferna\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "C:\\Projetos\\log-library\\Poc.Log.Lib\\Poc.Log.Lib.csproj",
-      "projectName": "Poc.Log.Lib",
+      "projectName": "Poc.Log.Library",
       "projectPath": "C:\\Projetos\\log-library\\Poc.Log.Lib\\Poc.Log.Lib.csproj",
       "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\log-library\\Poc.Log.Lib\\obj\\",

@@ -1,8 +1,8 @@
-﻿using Poc.Log.Lib.Enums;
-using Poc.Log.Lib.Arguments;
+﻿using Poc.Log.Lib.Domain.Enums;
+using Poc.Log.Lib.Entity;
 using System;
 
-namespace Poc.Log.Lib.Targets.Base
+namespace Poc.Log.Lib.Domain.Targets.Base
 {
     /// <summary>
     /// Super classe que representa os logs de cada target gerado
@@ -15,7 +15,7 @@ namespace Poc.Log.Lib.Targets.Base
         protected NLog.Logger _log;
 
         /// <summary>
-        /// Inicializa a intancia da classe Poc.Log.Lib.Targets.Base.Logger
+        /// Inicializa a intancia da classe Poc.Log.Lib.Domain.Targets.Base.Logger
         /// </summary>
         public Logger() => _log = LogManager.GetLogger();
 
@@ -24,12 +24,11 @@ namespace Poc.Log.Lib.Targets.Base
         /// </summary>
         /// <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
         /// <returns>Objeto do tipo NLOG.LogEventInfo</returns>
-        protected NLog.LogEventInfo GerarLogEventInfo(in LoggerArgs loggerArgs)
+        protected NLog.LogEventInfo GetLogEventInfo(in LoggerArgs loggerArgs)
         {
-            var logEventInfo = CarregarLevelLog(loggerArgs.LogType, loggerArgs.Message);
+            var logEventInfo = GetLevelLog(loggerArgs.LogType, loggerArgs.Message, loggerArgs.Exception);
 
             logEventInfo.Properties["Source"] = loggerArgs.Source;
-            logEventInfo.Exception = loggerArgs.Exception;
 
             logEventInfo.Properties["DateStart"] = loggerArgs.DateStart.HasValue ? 
                 loggerArgs.DateStart.Value.ToString("yyyy-MM-dd HH:mm:ss.fff") :
@@ -39,9 +38,9 @@ namespace Poc.Log.Lib.Targets.Base
                 loggerArgs.DateFinish.Value.ToString("yyyy-MM-dd HH:mm:ss.fff") :
                 null;
 
-            if (loggerArgs.Objects != null)
+            if (loggerArgs.AditionalInformations != null)
             {
-                foreach (var item in loggerArgs.Objects)
+                foreach (var item in loggerArgs.AditionalInformations)
                 {
                     var value = (item.Value is DateTime valueDateTime) ? valueDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") :
                         item.Value.ToString();
@@ -55,7 +54,7 @@ namespace Poc.Log.Lib.Targets.Base
 
         #region Metodos_Auxiliares
 
-        private NLog.LogEventInfo CarregarLevelLog(in LogType logType, in string message)
+        private NLog.LogEventInfo GetLevelLog(in LogType logType, in string message, in Exception exception)
         {
             NLog.LogEventInfo logEventInfo;
 
@@ -69,6 +68,7 @@ namespace Poc.Log.Lib.Targets.Base
                     break;
                 case LogType.Error:
                     logEventInfo = new NLog.LogEventInfo(NLog.LogLevel.Error, "", message);
+                    logEventInfo.Exception = exception;
                     break;
                 case LogType.Trace:
                     logEventInfo = new NLog.LogEventInfo(NLog.LogLevel.Trace, "", message);

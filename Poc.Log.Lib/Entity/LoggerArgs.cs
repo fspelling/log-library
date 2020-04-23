@@ -1,8 +1,8 @@
-﻿using Poc.Log.Lib.Enums;
+﻿using Poc.Log.Lib.Domain.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace Poc.Log.Lib.Arguments
+namespace Poc.Log.Lib.Entity
 {
     /// <summary>
     /// Representa entrada dos argumentos do log
@@ -42,7 +42,7 @@ namespace Poc.Log.Lib.Arguments
         /// <summary>
         /// Lista dos objetos especificos para cada sistema que esteja consumindo
         /// </summary>
-        public Dictionary<string, object> Objects { get; }
+        public Dictionary<string, object> AditionalInformations { get; }
 
         /// <summary>
         /// Inicializa a intancia da classe Poc.Log.Lib.Arguments.LoggerArgs
@@ -53,16 +53,16 @@ namespace Poc.Log.Lib.Arguments
         /// <param name="dateFinish">Data que finalizou o processamento</param>
         /// <param name="exception">Excessao gerado para o log</param>
         /// <param name="source">Nome do namespace do sistema que esta chamando o log</param>
-        /// <param name="objects">Lista dos objetos especificos para cada sistema que esteja consumindo</param>
-        public LoggerArgs(LogType logType, string message, DateTime? dateStart, DateTime? dateFinish, Exception exception = null, string source = "", Dictionary<string, object> objects = null)
+        /// <param name="aditionalInformations">Lista dos objetos especificos para cada sistema que esteja consumindo</param>
+        public LoggerArgs(LogType logType, string message, DateTime? dateStart, DateTime? dateFinish, Exception exception = null, string source = "", Dictionary<string, object> aditionalInformations = null)
         {
             LogType = logType;
             Message = message;
             DateStart = dateStart;
             DateFinish = dateFinish;
-            Objects = objects;
             Exception = exception;
             Source = source;
+            AditionalInformations = aditionalInformations;
         }
     }
 }

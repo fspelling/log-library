@@ -1,6 +1,6 @@
 ﻿using NLog.Web;
 
-namespace Poc.Log.Lib
+namespace Poc.Log.Lib.Domain
 {
     internal static class LogManager
     {

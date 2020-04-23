@@ -1,4 +1,4 @@
-﻿namespace Poc.Log.Lib.Enums
+﻿namespace Poc.Log.Lib.Domain.Enums
 {
     /// <summary>
     /// Representa tipos do log gerado

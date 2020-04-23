@@ -1,6 +1,6 @@
-﻿using Poc.Log.Lib.Arguments;
+﻿using Poc.Log.Lib.Entity;
 
-namespace Poc.Log.Lib.Interfaces
+namespace Poc.Log.Lib.Domain.Interfaces
 {
     /// <summary>
     /// Interface de log que sera implementada em cada target
@@ -10,7 +10,7 @@ namespace Poc.Log.Lib.Interfaces
         /// <summary>
         /// Grava as informacoes no log
         /// </summary>
-        /// <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
-        void Gravar(LoggerArgs loggerArgs);
+        /// <param name="loggerArgs">Objeto que representa os dados a serem gravados no log</param>
+        void Save(LoggerArgs loggerArgs);
     }
 }

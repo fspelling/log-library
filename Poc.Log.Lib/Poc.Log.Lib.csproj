@@ -6,6 +6,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netcoreapp3.1\Poc.Log.Lib.xml</DocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Poc.Log.Library</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Fernando Spelling</Authors>
+    <Company>Test</Company>
+    <PackageDescription>Modelo de dominio para a gravacao de logs seja um banco de dados sql, nsql ou ate mesmo arquivos de texto</PackageDescription>
   </PropertyGroup>
 
   <ItemGroup>
