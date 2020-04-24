@@ -8,11 +8,17 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Modelo de dominio para a gravacao de logs seja um banco de dados sql, nsql ou ate mesmo arquivos de texto</description>
     <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="NLog" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="NLog.Config" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="NLog.Mongo" version="4.6.0.86" exclude="Build,Analyzers" />
+        <dependency id="NLog.Web.AspNetCore" version="4.9.2" exclude="Build,Analyzers" />
+      </group>
       <group targetFramework=".NETCoreApp3.1">
         <dependency id="NLog" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="NLog.Config" version="4.7.0" exclude="Build,Analyzers" />
         <dependency id="NLog.Mongo" version="4.6.0.86" exclude="Build,Analyzers" />
-        <dependency id="NLog.Web.AspNetCore" version="4.9.1" exclude="Build,Analyzers" />
-        <dependency id="NLog.WindowsIdentity" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="NLog.Web.AspNetCore" version="4.9.2" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <frameworkReferences>
@@ -22,6 +28,8 @@
     </frameworkReferences>
   </metadata>
   <files>
+    <file src="C:\Projetos\log-library\Poc.Log.Lib\bin\Debug\netcoreapp2.1\Poc.Log.Lib.dll" target="lib\netcoreapp2.1\Poc.Log.Lib.dll" />
+    <file src="C:\Projetos\log-library\Poc.Log.Lib\bin\Debug\netcoreapp2.1\Poc.Log.Lib.xml" target="lib\netcoreapp2.1\Poc.Log.Lib.xml" />
     <file src="C:\Projetos\log-library\Poc.Log.Lib\bin\Debug\netcoreapp3.1\Poc.Log.Lib.dll" target="lib\netcoreapp3.1\Poc.Log.Lib.dll" />
     <file src="C:\Projetos\log-library\Poc.Log.Lib\bin\Debug\netcoreapp3.1\Poc.Log.Lib.xml" target="lib\netcoreapp3.1\Poc.Log.Lib.xml" />
   </files>

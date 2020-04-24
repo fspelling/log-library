@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Poc.Log.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:Poc.Log.Lib.Domain.Enums.LogType">
+            <summary>
+            Representa tipos do log gerado
+            </summary>
+        </member>
+        <member name="F:Poc.Log.Lib.Domain.Enums.LogType.Info">
+            <summary>
+            Level Info
+            </summary>
+        </member>
+        <member name="F:Poc.Log.Lib.Domain.Enums.LogType.Debug">
+            <summary>
+            Level Debug
+            </summary>
+        </member>
+        <member name="F:Poc.Log.Lib.Domain.Enums.LogType.Error">
+            <summary>
+            Level Error
+            </summary>
+        </member>
+        <member name="F:Poc.Log.Lib.Domain.Enums.LogType.Trace">
+            <summary>
+            Level Trace
+            </summary>
+        </member>
+        <member name="T:Poc.Log.Lib.Domain.Interfaces.ILogger">
+            <summary>
+            Interface de log que sera implementada em cada target
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Interfaces.ILogger.Save(Poc.Log.Lib.Entity.LoggerArgs)">
+            <summary>
+            Grava as informacoes no log
+            </summary>
+            <param name="loggerArgs">Objeto que representa os dados a serem gravados no log</param>
+        </member>
+        <member name="T:Poc.Log.Lib.Domain.Targets.Base.Logger">
+            <summary>
+            Super classe que representa os logs de cada target gerado
+            </summary>
+        </member>
+        <member name="F:Poc.Log.Lib.Domain.Targets.Base.Logger._log">
+            <summary>
+            Atributo que representa o log do framework NLOG
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.Base.Logger.#ctor">
+            <summary>
+            Inicializa a intancia da classe Poc.Log.Lib.Domain.Targets.Base.Logger
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.Base.Logger.GetLogEventInfo(Poc.Log.Lib.Entity.LoggerArgs@)">
+            <summary>
+            Retorna um novo objeto do tipo NLOG.LogEventInfo, de acordo com as informacoes passadas em seu parametro
+            </summary>
+            <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
+            <returns>Objeto do tipo NLOG.LogEventInfo</returns>
+        </member>
+        <member name="T:Poc.Log.Lib.Domain.Targets.LoggerMongo">
+            <summary>
+            Classe que representa os logs do banco de dados nsql mongodb
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.LoggerMongo.#ctor">
+            <summary>
+            Inicializa a intancia da classe Poc.Log.Lib.Domain.Targets.LoggerMongo
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.LoggerMongo.Save(Poc.Log.Lib.Entity.LoggerArgs)">
+            <summary>
+            Grava as informacoes no log
+            </summary>
+            <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
+        </member>
+        <member name="T:Poc.Log.Lib.Domain.Targets.LoggerSqlServer">
+            <summary>
+            Classe que representa os logs do banco de dados sql server
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.LoggerSqlServer.#ctor">
+            <summary>
+            Inicializa a intancia da classe Poc.Log.Lib.Targets.LoggerSqlServer
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Domain.Targets.LoggerSqlServer.Save(Poc.Log.Lib.Entity.LoggerArgs)">
+            <summary>
+            Grava as informacoes no log
+            </summary>
+            <param name="loggerArgs">Objeto que representa os dados ha serem gravados no log</param>
+        </member>
+        <member name="T:Poc.Log.Lib.Entity.LoggerArgs">
+            <summary>
+            Representa entrada dos argumentos do log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.LogType">
+            <summary>
+            Tipo do log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.Message">
+            <summary>
+            Mensagem do log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.DateStart">
+            <summary>
+            Data que iniciou o processamento
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.DateFinish">
+            <summary>
+            Data que finalizou o processamento
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.Exception">
+            <summary>
+            Excessao gerado para o log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.Source">
+            <summary>
+            Nome do namespace do sistema que esta chamando o log
+            </summary>
+        </member>
+        <member name="P:Poc.Log.Lib.Entity.LoggerArgs.AditionalInformations">
+            <summary>
+            Lista dos objetos especificos para cada sistema que esteja consumindo
+            </summary>
+        </member>
+        <member name="M:Poc.Log.Lib.Entity.LoggerArgs.#ctor(Poc.Log.Lib.Domain.Enums.LogType,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Exception,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Inicializa a intancia da classe Poc.Log.Lib.Arguments.LoggerArgs
+            </summary>
+            <param name="logType">Tipo do log</param>
+            <param name="message">Mensagem do log</param>
+            <param name="dateStart">Data que iniciou o processamento</param>
+            <param name="dateFinish">Data que finalizou o processamento</param>
+            <param name="exception">Excessao gerado para o log</param>
+            <param name="source">Nome do namespace do sistema que esta chamando o log</param>
+            <param name="aditionalInformations">Lista dos objetos especificos para cada sistema que esteja consumindo</param>
+        </member>
+    </members>
+</doc>

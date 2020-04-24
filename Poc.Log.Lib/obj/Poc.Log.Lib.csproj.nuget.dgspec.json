@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Projetos\\log-library\\Poc.Log.Lib\\Poc.Log.Lib.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Projetos\\log-library\\Poc.Log.Lib\\Poc.Log.Lib.csproj",
         "projectName": "Poc.Log.Library",
@@ -13,18 +13,24 @@
         "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
         "outputPath": "C:\\Projetos\\log-library\\Poc.Log.Lib\\obj\\",
         "projectStyle": "PackageReference",
+        "crossTargeting": true,
         "configFilePaths": [
           "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "netcoreapp2.1",
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Projetos\\library": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          },
           "netcoreapp3.1": {
             "projectReferences": {}
           }
@@ -36,9 +42,19 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
             "NLog": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "NLog.Config": {
               "target": "Package",
               "version": "[4.7.0, )"
             },
@@ -48,11 +64,38 @@
             },
             "NLog.Web.AspNetCore": {
               "target": "Package",
-              "version": "[4.9.1, )"
-            },
-            "NLog.WindowsIdentity": {
+              "version": "[4.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        },
+        "netcoreapp3.1": {
+          "dependencies": {
+            "NLog": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "NLog.Config": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "NLog.Mongo": {
+              "target": "Package",
+              "version": "[4.6.0.86, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.2, )"
             }
           },
           "imports": [
